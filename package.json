@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
@@ -25,7 +26,9 @@
     "@types/node": "^20.11.17",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/tsconfig": "^0.5.1",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.4.3",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vue-tsc": "^3.1.3"
   }
 }

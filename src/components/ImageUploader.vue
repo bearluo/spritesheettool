@@ -34,7 +34,7 @@ const emit = defineEmits<{
 
 const fileList = ref<UploadFiles>([])
 
-const handleFileChange = (uploadFile: UploadFile, uploadFiles: UploadFiles) => {
+const handleFileChange = (uploadFile: UploadFile) => {
   if (uploadFile.raw) {
     emit('change', [uploadFile.raw])
   }

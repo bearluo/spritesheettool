@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import type { ImageInfo } from '@/types/image'
-import { getImageInfo, loadImage } from '@/utils/imageUtils'
+import { getImageInfo } from '@/utils/imageUtils'
 
 /**
  * 图片处理组合式函数

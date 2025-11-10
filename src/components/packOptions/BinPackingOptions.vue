@@ -149,13 +149,13 @@ const updateAllowRotation = (val: boolean | undefined) => {
   emitUpdate({ allowRotation: Boolean(val) })
 }
 
-const updateTag = (val: boolean | undefined) => {
-  emitUpdate({ tag: Boolean(val) })
-}
+// const updateTag = (val: boolean | undefined) => {
+//   emitUpdate({ tag: Boolean(val) })
+// }
 
-const updateExclusiveTag = (val: boolean | undefined) => {
-  emitUpdate({ exclusiveTag: val ?? true })
-}
+// const updateExclusiveTag = (val: boolean | undefined) => {
+//   emitUpdate({ exclusiveTag: val ?? true })
+// }
 
 const updateBorder = (val: number | undefined) => {
   emitUpdate({ border: val ?? 0 })
