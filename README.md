@@ -2,6 +2,8 @@
 
 一个基于 Vue3 + TypeScript 的合图拆图工具，支持将多个图片合并成一张合图，以及从合图中拆分出原始图片。
 
+https://bearluo.github.io/spritesheettool/
+
 ## 功能特性
 
 - 🖼️ **合图功能**：将多个图片合并成一张合图，自动排列
