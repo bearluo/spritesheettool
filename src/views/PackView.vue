@@ -6,14 +6,16 @@
           <template #header>
             <div class="card-header">
               <span>图片上传</span>
-              <el-button
-                v-if="images.length > 0"
-                type="danger"
-                size="small"
-                @click="handleClear"
-              >
-                清空
-              </el-button>
+              <div class="header-actions">
+                <el-button
+                  v-if="images.length > 0"
+                  type="danger"
+                  size="small"
+                  @click="handleClear"
+                >
+                  清空
+                </el-button>
+              </div>
             </div>
           </template>
           <ImageUploader @change="handleImagesChange" />
@@ -87,6 +89,7 @@ import { useSpriteStore } from '@/stores/spriteStore'
 import { downloadImage, compressImage } from '@/utils/imageUtils'
 import { downloadConfig } from '@/utils/configParser'
 import type { SpritePackerOptions } from '@/types/sprite'
+import { ImageInfo } from '@/types/image'
 
 const { images, addImages, removeImage, clearImages } = useImageProcessor()
 const { packSprites, error: packError } = useSpritePacker()
@@ -146,12 +149,6 @@ const generateSprite = async () => {
   }
 }
 
-const safeExportName = computed(() => {
-  const name = exportName.value.trim()
-  const sanitized = name.replace(/[\\/:*?"<>|]/g, '_')
-  return sanitized || 'sprite'
-})
-
 const handleExport = async (format: string) => {
   if (!spriteResult.value) return
 
@@ -175,12 +172,19 @@ const handleExport = async (format: string) => {
   }
 }
 
+const safeExportName = computed(() => {
+  const name = exportName.value.trim()
+  const sanitized = name.replace(/[\\/:*?"<>|]/g, '_')
+  return sanitized || 'sprite'
+})
+
 // 监听图片变化，自动生成合图
 watch(() => images.value.length, async () => {
   if (images.value.length > 0) {
     await generateSprite()
   }
 })
+
 </script>
 
 <style scoped>
@@ -214,9 +218,7 @@ watch(() => images.value.length, async () => {
 }
 
 .image-list {
-  margin-top: 20px;
-  max-height: 400px;
-  overflow-y: auto;
+  margin-top: 16px;
 }
 </style>
 

@@ -49,6 +49,7 @@ import AppImage from '@/components/common/Image.vue'
 
 const props = defineProps<{
   canvas?: HTMLCanvasElement
+  img_url?: string
 }>()
 
 const previewRef = ref<HTMLElement>()
@@ -60,7 +61,7 @@ const isDragging = ref(false)
 const dragStart = ref({ x: 0, y: 0 })
 
 const canvasUrl = computed(() => {
-  return props.canvas?.toDataURL()
+  return props.img_url || props.canvas?.toDataURL()
 })
 
 /**

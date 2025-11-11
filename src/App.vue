@@ -19,6 +19,10 @@
               <el-icon><Scissor /></el-icon>
               <span>拆图</span>
             </el-menu-item>
+            <el-menu-item index="/split">
+              <el-icon><Grid /></el-icon>
+              <span>帧序列分割</span>
+            </el-menu-item>
           </el-menu>
         </el-aside>
         <el-main class="app-main">

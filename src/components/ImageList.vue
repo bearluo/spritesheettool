@@ -32,17 +32,18 @@
 </template>
 
 <script setup lang="ts">
-import { Delete } from '@element-plus/icons-vue'
+import { Delete, Grid } from '@element-plus/icons-vue'
 import type { ImageInfo } from '@/types/image'
 import { useImageStore } from '@/stores/imageStore'
 import AppImage from '@/components/common/Image.vue'
 
-defineProps<{
+const props = defineProps<{
   images: ImageInfo[]
 }>()
 
 const emit = defineEmits<{
   remove: [id: string]
+  split: [image: ImageInfo]
 }>()
 
 const imageStore = useImageStore()
@@ -122,16 +123,27 @@ const handleRemove = (id: string) => {
   color: #909399;
 }
 
-.remove-btn {
+.remove-btn,
+.split-btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.image-item:hover .remove-btn {
+.remove-btn {
+  top: 8px;
+  right: 8px;
+}
+
+.split-btn {
+  top: 8px;
+  left: 8px;
+}
+
+.image-item:hover .remove-btn,
+.image-item:hover .split-btn {
   opacity: 1;
 }
 </style>
+
 

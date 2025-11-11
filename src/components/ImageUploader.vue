@@ -5,8 +5,8 @@
       :auto-upload="false"
       :on-change="handleFileChange"
       :show-file-list="false"
-      :multiple="true"
-      :accept="'image/*'"
+      :multiple="multiple"
+      :accept="accept"
       drag
       class="upload-dragger"
     >
@@ -28,15 +28,23 @@ import { ref } from 'vue'
 import { UploadFilled } from '@element-plus/icons-vue'
 import type { UploadFile, UploadFiles } from 'element-plus'
 
+withDefaults(defineProps<{
+  multiple?: boolean
+  accept?: string
+}>(), {
+  multiple: false,
+  accept: 'image/*'
+})
+
 const emit = defineEmits<{
-  'change': [files: File[]]
+  change: [files: File[]]
 }>()
 
 const fileList = ref<UploadFiles>([])
 
 const handleFileChange = (uploadFile: UploadFile) => {
   if (uploadFile.raw) {
-    emit('change', [uploadFile.raw])
+    emit('change', [uploadFile.raw as File])
   }
 }
 </script>
