@@ -32,12 +32,12 @@
 </template>
 
 <script setup lang="ts">
-import { Delete, Grid } from '@element-plus/icons-vue'
+import { Delete } from '@element-plus/icons-vue'
 import type { ImageInfo } from '@/types/image'
 import { useImageStore } from '@/stores/imageStore'
 import AppImage from '@/components/common/Image.vue'
 
-const props = defineProps<{
+defineProps<{
   images: ImageInfo[]
 }>()
 

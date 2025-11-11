@@ -89,7 +89,6 @@ import { useSpriteStore } from '@/stores/spriteStore'
 import { downloadImage, compressImage } from '@/utils/imageUtils'
 import { downloadConfig } from '@/utils/configParser'
 import type { SpritePackerOptions } from '@/types/sprite'
-import { ImageInfo } from '@/types/image'
 
 const { images, addImages, removeImage, clearImages } = useImageProcessor()
 const { packSprites, error: packError } = useSpritePacker()
