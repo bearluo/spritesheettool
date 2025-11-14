@@ -1,0 +1,89 @@
+{
+    "name": "sprite-sheet-tool",
+    "version": "0.0.0",
+    "package_version": 2,
+    "type": "module",
+    "main": "./dist/browser.cjs",
+    "scripts": {
+        "dev": "npm run build -- --mode development",
+        "build": "vue-tsc -b && vite build"
+    },
+    "dependencies": {
+        "element-plus": "^2.8.6",
+        "fast-xml-parser": "^4.5.3",
+        "jszip": "^3.10.1",
+        "maxrects-packer": "^2.7.3",
+        "vue": "^3.4.37"
+    },
+    "devDependencies": {
+        "@cocos-fe/vite-plugin-cocos-panel": "^1.0.3",
+        "@cocos/creator-types": "^3.8.6",
+        "@types/jszip": "^3.4.1",
+        "@types/node": "^22.15.21",
+        "@vitejs/plugin-vue": "^5.2.2",
+        "@vue/tsconfig": "^0.7.0",
+        "rollup-plugin-node-externals": "^7.1.3",
+        "typescript": "^5.8.2",
+        "unplugin-auto-import": "^0.18.6",
+        "unplugin-vue-components": "^0.27.5",
+        "vite": "^5.4.1",
+        "vue-tsc": "^2.1.10"
+    },
+    "contributions": {
+        "menu": [
+            {
+                "path": "i18n:menu.panel/sprite-sheet-tool",
+                "label": "i18n:sprite-sheet-tool.title",
+                "message": "open"
+            }
+        ],
+        "messages": {
+            "open": {
+                "methods": [
+                    "open"
+                ]
+            },
+            "get-version": {
+                "methods": [
+                    "getVersion"
+                ]
+            },
+            "read-file": {
+                "methods": [
+                    "readFile"
+                ]
+            },
+            "write-file": {
+                "methods": [
+                    "writeFile"
+                ]
+            },
+            "file-exists": {
+                "methods": [
+                    "fileExists"
+                ]
+            },
+            "list-directory": {
+                "methods": [
+                    "listDirectory"
+                ]
+            },
+            "ensure-directory": {
+                "methods": [
+                    "ensureDirectory"
+                ]
+            }
+        }
+    },
+    "panels": {
+        "default": {
+            "main": "./dist/panel.cjs",
+            "size": {
+                "min-width": 400,
+                "min-height": 300,
+                "width": 800,
+                "height": 700
+            }
+        }
+    }
+}

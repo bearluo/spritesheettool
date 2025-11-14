@@ -1,0 +1,194 @@
+/* Sprite Sheet Tool - Cocos Creator 扩展面板样式 */
+
+/* 使用 Cocos Creator 的 CSS 变量和样式规范 */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-normal, 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'SourceHanSansCN-Normal', sans-serif);
+    background: var(--color-normal-fill, #242424);
+    color: var(--color-normal-contrast, rgb(255 255 255 / 87%));
+    line-height: calc(var(--size-normal-line, 20) * 1px);
+    font-size: calc(var(--size-normal-font, 12) * 1px);
+    user-select: none;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 链接样式 */
+a {
+    color: var(--color-brand, #409eff);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.25s;
+}
+
+a:hover {
+    color: var(--color-brand-hover, #66b1ff);
+}
+
+/* 按钮样式（如果需要自定义） */
+button {
+    font-family: inherit;
+    font-size: calc(var(--size-normal-font, 12) * 1px);
+    line-height: calc(var(--size-normal-line, 20) * 1px);
+    box-sizing: border-box;
+}
+
+/* 选择框样式 */
+select {
+    font: inherit;
+}
+
+/* 隐藏元素 */
+[hidden] {
+    display: none !important;
+}
+
+/* 滚动条样式（使用 Cocos Creator 的滚动条样式） */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-normal-fill-2, #1e1e1e);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-normal-fill-3, #3a3a3a);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-normal-fill-4, #4a4a4a);
+}
+
+/* Element Plus 组件在 Cocos Creator 中的适配 */
+.el-tabs {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.el-tabs__content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+}
+
+.el-tab-pane {
+    height: auto;
+    min-height: 0;
+}
+
+/* 确保卡片和容器使用正确的盒模型 */
+.el-card,
+.el-card__body {
+    box-sizing: border-box;
+}
+
+/* 确保输入框使用正确的字体 */
+.el-input__inner,
+.el-textarea__inner {
+    font-family: inherit;
+    font-size: calc(var(--size-normal-font, 12) * 1px);
+    line-height: calc(var(--size-normal-line, 20) * 1px);
+}
+
+/* Element Plus 下拉框背景修复 */
+.el-select-dropdown,
+.el-popper,
+.el-dropdown-menu,
+.el-popover,
+.el-tooltip__popper {
+    background-color: var(--color-normal-fill, #242424) !important;
+    border-color: var(--color-normal-border, #3a3a3a) !important;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Element Plus 下拉框选项 */
+.el-select-dropdown__item {
+    color: var(--color-normal-contrast, rgb(255 255 255 / 87%)) !important;
+    background-color: transparent !important;
+}
+
+.el-select-dropdown__item:hover {
+    background-color: var(--color-normal-fill-2, #1e1e1e) !important;
+}
+
+.el-select-dropdown__item.selected {
+    color: var(--color-brand, #409eff) !important;
+    background-color: var(--color-normal-fill-2, #1e1e1e) !important;
+}
+
+.el-select-dropdown__item.is-disabled {
+    color: var(--color-normal-contrast-emphasis, rgb(255 255 255 / 38%)) !important;
+    cursor: not-allowed !important;
+    background-color: transparent !important;
+}
+
+/* Element Plus 下拉菜单项 */
+.el-dropdown-menu__item {
+    color: var(--color-normal-contrast, rgb(255 255 255 / 87%)) !important;
+    background-color: transparent !important;
+}
+
+.el-dropdown-menu__item:hover {
+    background-color: var(--color-normal-fill-2, #1e1e1e) !important;
+}
+
+.el-dropdown-menu__item.is-disabled {
+    color: var(--color-normal-contrast-emphasis, rgb(255 255 255 / 38%)) !important;
+    cursor: not-allowed !important;
+    background-color: transparent !important;
+}
+
+/* Element Plus 弹出层通用样式 */
+.el-popper {
+    background-color: var(--color-normal-fill, #242424) !important;
+    border: 1px solid var(--color-normal-border, #3a3a3a) !important;
+}
+
+/* Element Plus 工具提示 */
+.el-tooltip__popper {
+    background-color: var(--color-normal-fill, #242424) !important;
+    border-color: var(--color-normal-border, #3a3a3a) !important;
+    color: var(--color-normal-contrast, rgb(255 255 255 / 87%)) !important;
+}
+
+/* Element Plus 弹出层箭头 */
+.el-popper__arrow::before {
+    background-color: var(--color-normal-fill, #242424) !important;
+    border-color: var(--color-normal-border, #3a3a3a) !important;
+}
+
+/* Element Plus 弹出层容器（当 teleported={false} 时） */
+#app .el-popper,
+#app .el-select-dropdown,
+#app .el-dropdown-menu,
+#app .el-popover,
+#app .el-tooltip__popper {
+    background-color: var(--color-normal-fill, #242424) !important;
+    border-color: var(--color-normal-border, #3a3a3a) !important;
+}

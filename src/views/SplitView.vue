@@ -8,7 +8,7 @@
               <span>图片上传</span>
             </div>
           </template>
-          <ImageUploader @change="handleImagesChange" :multiple="true" />
+          <ImageUploader @change="handleImagesChange" />
         </el-card>
       </el-col>
 

@@ -18,7 +18,7 @@
               </div>
             </div>
           </template>
-          <ImageUploader @change="handleImagesChange" />
+          <ImageUploader :multiple="true" @change="handleImagesChange" />
           <ImageList
             v-if="images.length > 0"
             :images="images"
